@@ -38,6 +38,16 @@ logger = logging.getLogger(__name__)
 # ...
 
 # Update the `get_dealerships` view to render the index page with a list of dealerships
+def about(request):
+    context = {}
+    return render(request, 'djangoapp/about.html', context)
+
+
+def contact(request):
+    context = {}
+    return render(request, 'djangoapp/contact.html', context)
+
+
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
