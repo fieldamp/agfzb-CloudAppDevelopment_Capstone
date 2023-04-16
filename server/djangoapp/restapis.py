@@ -38,7 +38,7 @@ import time
 # Create a `get_request` to make HTTP GET requests
 # e.g., response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
 #                                     auth=HTTPBasicAuth('apikey', api_key))
-def get_request(url, **kwargs):  
+def get_request(url, **kwargs):
     # If argument contain API KEY
     api_key = kwargs.get("api_key")
     print("GET from {} ".format(url))
@@ -53,7 +53,8 @@ def get_request(url, **kwargs):
                                     auth=HTTPBasicAuth('apikey', api_key))
         else:
             # Call get method of requests library with URL and parameters
-            response = requests.get(url, headers={'Content-Type': 'application/json'}, params=kwargs)
+            response = requests.get(url, headers={'Content-Type': 'application/json'},
+                                    params=kwargs)
     except:
         # If any error occurs
         print("Network exception occurred")
@@ -143,16 +144,16 @@ def get_dealer_reviews_from_cf(url, **kwargs):
                 review_obj.id = dealer_review["id"]
             if "purchase_date" in dealer_review:
                 review_obj.purchase_date = dealer_review["purchase_date"]
-            if "make" in dealer_review:
-                review_obj.make = dealer_review["make"]
+            if "car_make" in dealer_review:
+                review_obj.car_make = dealer_review["car_make"]
             if "car_model" in dealer_review:
                 review_obj.car_model = dealer_review["car_model"]
             if "car_year" in dealer_review:
                 review_obj.car_year = dealer_review["car_year"]
             
-            # sentiment = analyze_review_sentiments(review_obj.review)
+            sentiment = analyze_review_sentiments(review_obj.review)
             # # print(sentiment)
-            # review_obj.sentiment = sentiment
+            review_obj.sentiment = sentiment
             results.append(review_obj)
     print(results)
     return results
