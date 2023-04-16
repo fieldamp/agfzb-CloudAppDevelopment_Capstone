@@ -38,23 +38,24 @@
                     <a class="nav-link" style="color: rgb(43, 238, 238);" href="#">{{ user.username }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  style="color: rgb(43, 238, 238);" href="/djangoapp/logout/">Logout</a>
+                    <a class="btn btn-primary" href="{% url 'djangoapp:logout' %}">Logout</a>
                 </li>
                 {% else %}
-                    <li>
-                            <a class="btn btn-link" href="/djangoapp/login/">Sign In</a>
-                            <a class="btn btn-link" href="/djangoapp/signup/">Sign Up</a>
-                    </li>
+                <form clas="form-inline" action="{% url 'djangoapp:login' %}", method="POST">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="psw">
+                    <button class="btn btn-primary" type="submit">Login</button>    
+                    <a class="btn btn-primary" href="{% url 'djangoapp:registration' %}">Sign Up</a>
+                </form>
                 {% endif %}
             </ul>
         </div>
     </nav>
     <!--Add a dealer table here -->
     <div class="container-fluid">
-        {% if messages %}
-            {% for message in messages %}
+        {% if message %}
                 <div class="alert alert-warning" role="alert">{{ message }}</div>
-            {% endfor %}
         {% endif %}
     
         <table class="table" id="table"
