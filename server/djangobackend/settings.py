@@ -27,9 +27,9 @@ DEBUG = False
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost","localhost:8000","https://us-south.functions.appdomain.cloud/","https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai"]
+ALLOWED_HOSTS = ['localhost','localhost:8000','https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/*','https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/*','https://us-south.functions.appdomain.cloud/*']
 
-CSRF_TRUSTED_ORIGINS = ['https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',"https://us-south.functions.appdomain.cloud/",'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/*','https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/*','https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/dealer/*','https://*.127.0.0.1']
 
 
 # Application definition
