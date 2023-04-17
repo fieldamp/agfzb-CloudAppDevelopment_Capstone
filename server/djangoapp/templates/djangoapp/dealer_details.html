@@ -46,8 +46,6 @@
                 </ul>
             </div>
         </nav>
-    
-        {% if reviews %}
         <div style="margin: 10px;">
             <h3>
                 Reviews for <b>{{ dealer.full_name }}</b>
@@ -57,7 +55,8 @@
                 <div style="margin: 10px;">
                     <a class="btn btn-primary" href="{% url 'djangoapp:add_review' dealer.id %}"><b>Write a car review</b></a>
                 </div>
-            {% endif %}
+            {% endif %}   
+        {% if reviews %}
             <div class="card-columns">
                 {% for review in reviews %}
                     {% if review.car_make %}
