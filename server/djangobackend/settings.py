@@ -23,11 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ao5z(o(z@cvzodm99d32jkxa5e8a1!q_4sqss5-a%n6tg$#h$+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost","localhost:8000","https://us-south.functions.appdomain.cloud/","https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai"]
+
+CSRF_TRUSTED_ORIGINS = ['https://laalvcanab-8000.theiadocker-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',"https://us-south.functions.appdomain.cloud/",'https://*.127.0.0.1']
 
 
 # Application definition
